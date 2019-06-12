@@ -15,3 +15,21 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
 }
+
+public class GeoFenceTest{
+
+    @Test
+    public void compareLocationTest() {
+       // assertEquals(true);
+    }
+
+    @Test
+    public void testSaveLocation() {}
+    
+    @Test
+    public void testMakesNewLocation() {}
+
+    @Test
+    public void checkVolume(){}
+
+}
