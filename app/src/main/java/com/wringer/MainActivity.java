@@ -1,5 +1,6 @@
 package com.wringer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,8 +9,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+
+        if (id == R.id.new_geofence){
+
+            Intent intent = new Intent(this, NewGeofence.class);
+            String message = "New Geofence";
+            intent.putExtra(EXTRA_MESSAGE, message);
+            startActivity(intent);
+
         }
 
         return super.onOptionsItemSelected(item);
