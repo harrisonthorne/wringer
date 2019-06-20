@@ -30,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                createNewGeofence();
             }
         });
     }
@@ -65,5 +64,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void createNewGeofence(){
+        Intent intent = new Intent(this, NewGeofence.class);
+        String message = "New Geofence";
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+
     }
 }
